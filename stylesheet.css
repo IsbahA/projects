@@ -1,0 +1,103 @@
+body {
+    font-family: "Inter", Helvetica, Arial, sans-serif;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 5px; /* Slight rounding of corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.navbar .nav-link, .navbar .nav-button {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #000000;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+    border-radius: 3px; /* Slight rounding of button edges */
+}
+
+.navbar .nav-link:hover, .navbar .nav-button:hover {
+    background-color: #555;
+}
+
+.navbar .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black; /* logo color is black */
+    text-decoration: none; /* logo has no underline */
+}
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+.subheading {
+    font-size: 1.2em;
+    color: #666;
+    margin-top: -10px;
+}
+.container {
+    display: flex;
+    max-width:fit-content;
+    justify-content: center;
+    align-items: center;
+    height: auto; 
+    margin: 0;
+}
+.column {
+    flex: 1;
+    padding: 1rem;
+}
+.column.intro {
+    margin-right: 2rem;
+    
+}
+.column.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 2rem;
+    max-height: 550px;
+    
+}
+/*add charactristics of container for form here*/
+/*.contactmecontainer{
+    
+}
+*/
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 10px; /* rounding of corners */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* shadow for depth */
+    margin-top: 2rem; /* Space above footer */
+}
+
+.footer .footer-link {
+    color: black;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.footer .footer-link:hover {
+    color: #555;
+}
