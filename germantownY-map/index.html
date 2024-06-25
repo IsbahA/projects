@@ -111,21 +111,23 @@
             [40.0459162067792, -75.18222981253187]
         ]).addTo(map);
 
-        var plateSevenA2 = L.polyline([
+       /* var plateSevenA2 = L.polyline([
             [40.04292061229805, -75.1444113316615],
             [40.02958372094942, -75.1473275070273],
             [40.033372192275934, -75.17674113777126],
             [40.04802395597832, -75.17177575156772],
             [40.04292061229805, -75.1444113316615]
         ]).addTo(map);
+        */
 
-        var plateSevenA1 = L.polyline([
+       /* var plateSevenA1 = L.polyline([
             [40.04675364524721, -75.17733123476171],
             [40.03274155332281, -75.18048812127061],
             [40.03621361652963, -75.2073908242032],
             [40.050865171507226, -75.2030395194172],
             [40.04675364524721, -75.17733123476171]
         ]).addTo(map);
+        */
 
         // Description box control
         var descrip = L.control({ position: 'bottomleft' });
@@ -136,7 +138,7 @@
                 '<h1>About this Map</h1><hr>' +
                 '<p>This map displays the location of the Germantown YWCA building and other landmarks nearby.</p>' +
                 '<h2>How to Use</h2>' +
-                '<p>Click on a marker to learn more about a landmark.</p>'
+                '<p>Click on a marker to learn more about a landmark.</p>'+
                 '<p>Click anywhere to place a pin with an annotation</p>';
             return div;
         };
