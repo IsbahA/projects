@@ -76,25 +76,55 @@
         });
 
         // Add markers and polylines
-        var theY = L.marker([40.03688676164644, -75.17651294384324])
-            .bindPopup('<h1>The Germantown YWCA</h1><p>This is the location of the now abandoned YWCA building.</p>')
-            .addTo(map);
+            // Define a custom red icon
+        // Define a custom red icon using a local PNG file
+    var redIcon = L.icon({
+        iconUrl: 'redicon.png',  // Path to PNG file
+        iconSize: [75, 75],            // size of the icon
+        iconAnchor: [20, 80],          // point of the icon which will correspond to marker's location
+        popupAnchor: [17, -70]          // point from which the popup should open relative to the iconAnchor
+    });
+
+    // Create theY marker with the custom red icon
+    var theY = L.marker([40.03688676164644, -75.17651294384324], { icon: redIcon })
+        .bindPopup('<h1>The Germantown YWCA Building</h1><p>This is the location of the now abandoned YWCA building. It was a community hub and was the main Germantown YWCA building from 1916 to the early 2000s. It is currently the site of an ongoing political struggle between the community and the city over conservatorship and redevelopment.</p>')
+        .addTo(map);
 
         var vernonPark = L.marker([40.03542785276433, -75.17695293774428])
             .bindPopup('<h1>Vernon Park</h1>')
             .addTo(map);
 
         var CIP = L.marker([40.03695238316871, -75.17577428191765])
-            .bindPopup('<h1>Center in the Park</h1><p>A senior center that sits behind the YWCA building.</p>')
+            .bindPopup('<h1>Center in the Park</h1><p>The Center in the Park has been providing access to support services for older adults since 1968. It shares its only accessible parking lot with the YWCA building and much of its membership is deeply intertwined with that of the Friends For the Restoration of the Germantown YWCA Building.</p>')
             .addTo(map);
 
-        var freeLibrary = L.marker([40.035737424335885, -75.17649129541964])
+        var eastPennStreet = L.marker([40.033457684186125, -75.16829750104625])
+            .bindPopup('<h1>45 E. Penn Street</h1><p>This marks the location of the home of Elizabeth P. Smith. In 1869, she called a meeting here out of concern for female industrial workers who had no source of recreation or rest in the evenings. The beginning of the Germantown YWCA can be traced back to this meeting under the name "Women&#39s Christian Association".</p>')
+            .addTo(map);
+
+        var firstBoarding = L.marker([40.033673988415686, -75.17082332998076])
+            .bindPopup('<h1>The first housing provided by the Women&#39s Christian Association</h1><p>In 1870, rooms were opened here by the Association as an initial step to provide young women workers a place for rest, classes and Bible study. </p>')
+            .addTo(map);
+
+        var pineCottage = L.marker([40.02755013111227, -75.16061842727373])
+            .bindPopup('<h1>Pine Cottage</h1><p>In 1872, the first boarding house was opened by the Women&#39s Christian Association. It had six rooms, two of which were fitted with a desk and used as school rooms. It gained enough popularity that soon there was not enough room to accomodate all the girls. In 1874, the Association moved to a different location.</p>')
+            .addTo(map);
+
+        var theYBoardingHome = L.marker([40.03438121766597, -75.17260975344338])
+            .bindPopup('<h1>YWCA Boarding Home</h1><p>In 1874, the Germantown Association acquired a house on the N. E. corner of Mill and Main Srtreets (now Market Square). It was first used as a Boarding House then became the center for various programmes. It was reluctantly given up in 1941. (Carner).</p>')
+            .addTo(map);
+        var harknessHouse = L.marker([40.03436826007998, -75.17186601616558])
+            .bindPopup('<h1>Harkness House</h1><p>The current location of the Germantown Historical Society. It was the headquarters of the Germantown YWCA until 1916 when it was moved to 5820 Germantown Avenue.</p>')
+            .addTo(map);
+        /*var freeLibrary = L.marker([40.035737424335885, -75.17649129541964])
             .bindPopup('<h1>The Free Library</h1><p></p>')
             .addTo(map);
+        */
 
-        var germantownTownHall = L.marker([40.03801908329352, -75.17783074384282])
+        /*var germantownTownHall = L.marker([40.03801908329352, -75.17783074384282])
             .bindPopup('<h1>The Germantown Town Hall</h1><p></p>')
             .addTo(map);
+        */
 
         var germantownBoundary = L.polyline([
             [40.0459162067792, -75.18222981253187],
@@ -145,13 +175,13 @@
 
         descrip.addTo(map);
         // Add click event listener to the map
-    map.on('click', function(e) {
-      var annotation = prompt("Enter your annotation:");
-      if (annotation) {
-        var marker = L.marker(e.latlng).addTo(map);
-        marker.bindPopup(annotation).openPopup();
-      }
-    });
+        map.on('click', function(e) {
+        var annotation = prompt("Enter your annotation:");
+        if (annotation) {
+            var marker = L.marker(e.latlng).addTo(map);
+            marker.bindPopup(annotation).openPopup();
+        }
+        });
 
         // Show description box on map load
         descrip.getContainer().classList.add('visible');
@@ -179,7 +209,7 @@
         var baseLayers = {
             "Streets": googleStreets,
             "Satellite": googleSat
-        };
+        };;
 
         var overlayLayers = {
             "Germantown Boundary": germantownBoundary,
