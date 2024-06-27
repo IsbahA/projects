@@ -172,7 +172,9 @@
         // Add a trigger zone for showing the description box on mouseenter
         var triggerZone = document.querySelector('.trigger-zone');
         triggerZone.addEventListener('mouseenter', showDescriptionBox);
-
+        
+        //Add a mouseleave event to hide the descriotion box once the mouse leaves it
+        descrip.getContainer().addEventListener('mouseleave', hideDescriptionBox);
         // Layer control
         var baseLayers = {
             "Satellite": googleSat,
